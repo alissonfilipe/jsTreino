@@ -671,3 +671,188 @@ function slice(arr, start = 0, end = arr.length, step = 1) {
 
 // Exemplo: slice([1, 2, 3, 4, 5], 1, 4) => [2, 3, 4]
 // Exemplo: slice([1, 2, 3, 4, 5], 0, 5, 2) => [1, 3, 5]
+
+// 1. System.out.println (equivalente ao System.out.println em Java)
+function println(message) {
+    console.log(message);
+}
+
+// 2. String.equals (equivalente ao equals de Java)
+function equals(str1, str2) {
+    return str1 === str2;
+}
+
+// 3. Arrays.toString (equivalente ao Arrays.toString de Java)
+function arrayToString(arr) {
+    return arr.join(', ');
+}
+
+// 4. Math.pow (equivalente ao Math.pow de Java)
+function pow(base, exponent) {
+    return Math.pow(base, exponent);
+}
+
+// 5. String.toUpperCase e String.toLowerCase (equivalente ao toUpperCase e toLowerCase de Java)
+function toUpperCase(str) {
+    return str.toUpperCase();
+}
+
+function toLowerCase(str) {
+    return str.toLowerCase();
+}
+
+// 6. Integer.parseInt e Double.parseDouble (equivalente ao parseInt e parseDouble de Java)
+function parseIntValue(str) {
+    return parseInt(str, 10);
+}
+
+function parseDoubleValue(str) {
+    return parseFloat(str);
+}
+
+// 7. Arrays.sort (equivalente ao Arrays.sort de Java)
+function sortArray(arr) {
+    return arr.sort((a, b) => a - b);
+}
+
+// 8. Collections.reverse (equivalente ao Collections.reverse de Java)
+function reverseArray(arr) {
+    return arr.reverse();
+}
+
+// 9. String.contains (equivalente ao contains de Java)
+function contains(str, searchString) {
+    return str.includes(searchString);
+}
+
+// 10. Object.equals (equivalente ao equals para objetos em Java)
+function objectsEqual(obj1, obj2) {
+    return JSON.stringify(obj1) === JSON.stringify(obj2);
+}
+
+// 11. Math.max e Math.min (equivalente ao Math.max e Math.min de Java)
+function maxValue(...values) {
+    return Math.max(...values);
+}
+
+function minValue(...values) {
+    return Math.min(...values);
+}
+
+// 12. String.substring (equivalente ao substring de Java)
+function substring(str, start, end) {
+    return str.substring(start, end);
+}
+
+// 13. Arrays.fill (equivalente ao Arrays.fill de Java)
+function fillArray(arr, value) {
+    return arr.fill(value);
+}
+
+// 14. Character.isDigit e Character.isLetter (equivalente ao isDigit e isLetter de Java)
+function isDigit(char) {
+    return /\d/.test(char);
+}
+
+function isLetter(char) {
+    return /[a-zA-Z]/.test(char);
+}
+
+// 15. Optional.ofNullable (equivalente ao Optional.ofNullable de Java)
+function ofNullable(value, defaultValue) {
+    return value !== null && value !== undefined ? value : defaultValue;
+}
+
+// 16. Thread.sleep (equivalente ao Thread.sleep de Java)
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+// 17. StringBuilder.append (equivalente ao StringBuilder de Java)
+function StringBuilder() {
+    this.value = '';
+
+    this.append = function (str) {
+        this.value += str;
+        return this;
+    };
+
+    this.toString = function () {
+        return this.value;
+    };
+}
+
+// 18. Arrays.binarySearch (equivalente ao Arrays.binarySearch de Java)
+function binarySearch(arr, target) {
+    let left = 0;
+    let right = arr.length - 1;
+    while (left <= right) {
+        const mid = Math.floor((left + right) / 2);
+        if (arr[mid] === target) return mid;
+        if (arr[mid] < target) left = mid + 1;
+        else right = mid - 1;
+    }
+    return -1;
+}
+
+// Testes para verificar o comportamento das funções:
+
+// Exemplo para println
+println("Hello, World!");
+
+// Exemplo para equals
+println(equals("hello", "hello")); // true
+
+// Exemplo para arrayToString
+println(arrayToString([1, 2, 3])); // "1, 2, 3"
+
+// Exemplo para pow
+println(pow(2, 3)); // 8
+
+// Exemplo para toUpperCase e toLowerCase
+println(toUpperCase("hello")); // "HELLO"
+println(toLowerCase("WORLD")); // "world"
+
+// Exemplo para parseIntValue e parseDoubleValue
+println(parseIntValue("42")); // 42
+println(parseDoubleValue("42.42")); // 42.42
+
+// Exemplo para sortArray
+println(sortArray([3, 1, 2])); // [1, 2, 3]
+
+// Exemplo para reverseArray
+println(reverseArray([1, 2, 3])); // [3, 2, 1]
+
+// Exemplo para contains
+println(contains("hello world", "world")); // true
+
+// Exemplo para objectsEqual
+println(objectsEqual({ a: 1 }, { a: 1 })); // true
+
+// Exemplo para maxValue e minValue
+println(maxValue(1, 2, 3)); // 3
+println(minValue(1, 2, 3)); // 1
+
+// Exemplo para substring
+println(substring("hello", 1, 4)); // "ell"
+
+// Exemplo para fillArray
+println(fillArray(new Array(5), 0)); // [0, 0, 0, 0, 0]
+
+// Exemplo para isDigit e isLetter
+println(isDigit('5')); // true
+println(isLetter('A')); // true
+
+// Exemplo para ofNullable
+println(ofNullable(null, "default")); // "default"
+
+// Exemplo para sleep
+sleep(1000).then(() => println("1 segundo depois"));
+
+// Exemplo para StringBuilder
+const sb = new StringBuilder();
+sb.append("Hello").append(" ").append("World");
+println(sb.toString()); // "Hello World"
+
+// Exemplo para binarySearch
+println(binarySearch([1, 2, 3, 4, 5], 3)); // 2
