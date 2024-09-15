@@ -14,3 +14,7 @@ Implemente uma função inverterString(str) que receba uma string e retorne a me
 
 - Crie uma função chamada removerDuplicatas(arr) que receba um array de números e retorne um novo array sem duplicatas.
 Exemplo: removerDuplicatas([1, 2, 3, 3, 4]) retorna [1, 2, 3, 4].
+
+- Simular um dado de 6 lados
+Escreva uma função chamada rolarDado() que retorne um número aleatório entre 1 e 6, simulando o lançamento de um dado.
+Dica: Use Math.random().
